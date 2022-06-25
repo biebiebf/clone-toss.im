@@ -177,6 +177,27 @@ module.exports = {
         },
       },
     },
+    {
+      files: ['packages/home/**/*.ts?(x)', 'packages/home/**/*.js?(x)'],
+      extends: 'next/core-web-vitals',
+      settings: {
+        next: {
+          rootDir: 'packages/home/',
+        },
+        'import/resolver': {
+          typescript: {
+            project: path.resolve(`${__dirname}/packages/home/tsconfig.json`),
+          },
+        },
+      },
+      rules: {
+        '@typescript-eslint/no-unsafe-member-access': 'off',
+        '@typescript-eslint/no-unsafe-assignment': 'off',
+        '@typescript-eslint/no-unsafe-return': 'off',
+        '@typescript-eslint/no-unsafe-call': 'off',
+        'arrow-body-style': 'off',
+      },
+    },
   ],
   settings: {
     'import/extensions': ['.js', '.jsx', '.ts', '.tsx', 'spec.js'],
